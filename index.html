@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vitor Morilho · Portfólio</title>
+  <meta name="description" content="Portfólio de Vitor Morilho, desenvolvedor mobile: apps Android, iOS e Smart TV com Kotlin.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%2322382E'/><text x='50%' y='56%' font-family='Georgia' font-size='30' font-weight='700' fill='%23F5F1E8' text-anchor='middle' dominant-baseline='middle'>VM</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Aplica o tema salvo antes de pintar a página, para não piscar -->
+  <script>
+    try {
+      const t = localStorage.getItem("tema");
+      if (t) document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <header class="topo">
+    <div class="topo__inner">
+      <a href="#inicio" class="marca" aria-label="Início">VM</a>
+      <nav class="menu" aria-label="Seções">
+        <a href="#projetos">Projetos</a>
+        <a href="#stack">Stack</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="tema" type="button" aria-label="Alternar tema claro/escuro">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero__texto revelar">
+        <p class="sobretitulo">Desenvolvedor mobile · Kotlin</p>
+        <h1>Vitor<br>Morilho</h1>
+        <p class="hero__lead">Crio apps para Android, iPhone e Smart TV com Kotlin Multiplatform, do primeiro esboço até o app instalado no aparelho.</p>
+        <div class="hero__acoes">
+          <a class="botao botao--cheio" href="#projetos">Ver projetos</a>
+          <a class="botao" href="https://github.com/VitorMorilho" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+      <ul class="hero__numeros revelar" aria-label="Resumo">
+        <li><strong>3</strong><span>plataformas: Android, iOS e Smart TV</span></li>
+        <li><strong>380+</strong><span>espécies catalogadas no BioScanner</span></li>
+        <li><strong>1</strong><span>código compartilhado entre Android e iOS</span></li>
+      </ul>
+    </section>
+
+    <section id="projetos" class="secao">
+      <div class="secao__cabeca revelar">
+        <p class="sobretitulo">Projetos</p>
+        <h2>No que estou trabalhando</h2>
+      </div>
+      <div class="filtros revelar" role="group" aria-label="Filtrar projetos">
+        <button type="button" class="filtro ativo" data-filtro="todos" aria-pressed="true">Todos</button>
+        <button type="button" class="filtro" data-filtro="mobile" aria-pressed="false">Mobile</button>
+        <button type="button" class="filtro" data-filtro="tv" aria-pressed="false">Smart TV</button>
+        <button type="button" class="filtro" data-filtro="backend" aria-pressed="false">Backend</button>
+      </div>
+      <div class="destaques" id="destaques"></div>
+
+      <h3 class="subtitulo revelar">Estudos</h3>
+      <div class="estudos" id="estudos"></div>
+    </section>
+
+    <section id="stack" class="secao secao--faixa">
+      <div class="secao__cabeca revelar">
+        <p class="sobretitulo">Stack</p>
+        <h2>Ferramentas do dia a dia</h2>
+      </div>
+      <div class="stack" id="stack-lista"></div>
+    </section>
+
+    <section id="sobre" class="secao sobre">
+      <div class="secao__cabeca revelar">
+        <p class="sobretitulo">Sobre</p>
+        <h2>Apps que resolvem um problema de verdade</h2>
+      </div>
+      <div class="sobre__texto revelar">
+        <p>Sou desenvolvedor com foco em mobile e Kotlin. Gosto de projetos com propósito: hoje o principal é o BioScanner, um app de registro e consulta de serpentes do Brasil feito com dados científicos abertos, que roda em Android e iPhone a partir do mesmo código.</p>
+        <p>Antes do mobile, estudei backend com Spring Boot, Kotlin, Java e Kafka. Essa base me ajuda a cuidar do app inteiro: telas, banco de dados local, login, publicação e atualização.</p>
+      </div>
+    </section>
+
+    <section id="contato" class="secao contato">
+      <div class="contato__caixa revelar">
+        <p class="sobretitulo">Contato</p>
+        <h2>Tem uma ideia de app?</h2>
+        <p>Vamos conversar sobre o seu projeto.</p>
+        <div class="hero__acoes">
+          <a class="botao botao--cheio" href="https://github.com/VitorMorilho" target="_blank" rel="noopener">GitHub</a>
+          <!-- TODO: preencher e descomentar (e tirar o botao--cheio do GitHub acima)
+          <a class="botao botao--cheio" href="mailto:[seu-email]">Mandar e-mail</a>
+          <a class="botao" href="[seu-linkedin]" target="_blank" rel="noopener">LinkedIn</a>
+          -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>© <span id="ano"></span> Vitor Morilho</p>
+  </footer>
+
+  <dialog class="detalhe" id="detalhe" aria-labelledby="detalhe-titulo">
+    <button class="detalhe__fechar" type="button" aria-label="Fechar">×</button>
+    <div id="detalhe-conteudo"></div>
+  </dialog>
+
+  <script src="js/projetos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
